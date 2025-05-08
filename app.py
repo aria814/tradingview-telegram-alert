@@ -6,6 +6,10 @@ app = Flask(__name__)
 TELEGRAM_BOT_TOKEN = "7981671598:AAHGQxtOEUWiQBmkrFSVTYarQ57Ki2tHCEQ"
 TELEGRAM_CHAT_ID = "-1002564437647"
 
+@app.route('/', methods=['GET'])
+def home():
+    return '✅ Bot is running! Send POST requests to this URL.'
+
 @app.route('/', methods=['POST'])
 def alert():
     data = request.data.decode('utf-8')
